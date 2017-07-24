@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+    <html>
+      <title>Edit and Update JSON data</title>
+        <div>
+           <table><tbody>
+                <tr ng-repeat="(key, value) in myTestJson.MyTest.Main.dynamic" >
+                  <td><label>{{key}}: </label> 
+            <input placeholder="" type="text" ng-model="value">
+                   </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button value="Update and Save" id="saveButtonId" ng-href="index.html" ng-click="finishEdit">Update/Save</button>
+        </div>
+    </html>
