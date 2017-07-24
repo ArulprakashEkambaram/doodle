@@ -1,1 +1,48 @@
-
+<!DOCTYPE html>
+    <html>
+      <head>
+       <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+       <script src="app.js"></script> 
+      </head>
+      <body ng-app="myApp">
+        <div ng-controller="TestCtrl">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Edit</th>
+                  <th>Add</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(key, value) in myTestJson.MyTest" >
+                  <td>{{value.Main.static.name}} </td>
+                  <td><a ng-href="editName.html">Edit</a></td>
+                  <td><button id="button1"  ng-click="add(value.Main.static.name)">Add</button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <br><br>
+        <br>
+        <table border="1" class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  ng-repeat="name in jsonNames"  >
+               <td>{{name}}</td>
+              <td><button id="button1" name="singlebutton" ng-click="delete(name)">Delete</button></td>
+            </tr>
+            <tr ng-hide="myTestJson.MyTest.length">
+              <td colspan="3">
+                <p>No Names</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </body>
+    </html>
