@@ -1,4 +1,4 @@
-var app = angular.module('myApp', []);
+var app = angular.module('Mywork', []);
 app.controller('TestCtrl',function($scope, $http ) {
      $http.get('test.json').success(function(response) {
         $scope.myTestJson = response;
